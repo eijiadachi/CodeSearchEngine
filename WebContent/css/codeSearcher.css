@@ -1,0 +1,51 @@
+div#result-content, div#search-content
+{
+	width:80%; 
+	margin-left:10%; 
+	margin-top:10%;
+}
+
+div#help-content
+{
+	position: absolute;
+	width: 10%;
+	left: 90%;
+	top: 10px;
+}
+
+span.logo
+{
+	font-size: 50px;
+}
+
+span.result-header
+{
+	font-size: 18px;
+	font-family: Lucida Sans, Tahoma, Arial, Sans-Serif;
+	font-weight: bold;	
+	color: #12C;
+}
+
+span.method-name
+{
+	font-size: 18px;
+	font-family: Lucida Sans, Tahoma, Arial, Sans-Serif;
+	font-weight: bold;	
+	color:purple;
+}
+
+div.snippet
+{
+	border: 2px solid lightSteelBlue;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	width:100%; 
+	height:170px; 
+	background-color:#F2F2F2; 
+	overflow:auto;
+}
+
+div.result-content
+{
+	margin-top: 25px;
+}
