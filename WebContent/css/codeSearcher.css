@@ -1,8 +1,24 @@
-div#result-content, div#search-content
+body
+{
+	font-size: 16px;
+	font-family: arial,sans-serif;
+}
+
+a:link, a:visited
+{
+	text-decoration: none;	
+}
+
+div#result-content, div#search-content, div#error-content
 {
 	width:80%; 
 	margin-left:10%; 
 	margin-top:10%;
+}
+
+div#result-search-form
+{
+	width: 80%;
 }
 
 div#help-content
@@ -16,6 +32,22 @@ div#help-content
 span.logo
 {
 	font-size: 50px;
+}
+
+span.result
+{
+	color: #DD4B39;
+}
+
+span.query
+{
+	color: #12C;
+}
+
+span.error_msg
+{
+	color: red;
+	font-size: 20px;
 }
 
 span.result-header

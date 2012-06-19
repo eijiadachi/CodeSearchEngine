@@ -12,6 +12,7 @@
 <body>
 	
 	<div id="help-content">
+		<span style="text-align: right;"><a href="index.jsp">Home</a></span>
 		<span style="text-align: right;"><a href="help.jsp">Help</a></span>
 	</div>
 	
@@ -19,14 +20,22 @@
 	
 		<center>
 			<div>
-				<span class="logo">Code Search Engine</span>
+				<span class="logo" title="Coode - A Code Search Engine">
+					<a href="index.jsp">
+					<span style="color: blue;">C</span>
+					<span style="color: red;">o</span>
+					<span style="color: #FFCC00;">o</span>
+					<span style="color: green;">d</span>
+					<span style="color: blue;">e</span>
+					</a>
+				</span>
 			</div>
 		</center>
 		
 		<center>
 			<div id="search-form">
-				<form method="get" action="Searcher.search">
-					<input type="text" name="query" size="100" style="background-color: white;"></input><br>
+				<form method="post" action="Searcher.search">
+					<input type="text" name="query" size="150" style="background-color: white;"></input><br>
 					<input type="submit" value="Search" />
 				</form>
 			</div>

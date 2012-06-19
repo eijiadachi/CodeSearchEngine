@@ -68,9 +68,6 @@ public class Searcher extends AbstractIndexAccessServlet
 
 				final Document document = reader.document( docId );
 
-				System.out.println( document.get( "docId" ) );
-				System.out.println( searcher.explain( query, docId ) );
-
 				documents.add( document );
 
 				String id = document.get( "docId" );
@@ -79,13 +76,16 @@ public class Searcher extends AbstractIndexAccessServlet
 			}
 
 			request.setAttribute( "documents", documents );
+			request.setAttribute( "query", query );
 
 			HttpSession session = request.getSession();
 
 			session.setAttribute( "documentsMap", map );
 		}
-		catch (ParseException e)
+		catch (Exception e)
 		{
+			request.setAttribute("exception", e);
+			
 			dispatcher = request.getRequestDispatcher( "error.jsp" );
 		}
 		finally
