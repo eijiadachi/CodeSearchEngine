@@ -7,7 +7,7 @@
   <!-- without allow, DWR isn't allowed to do anything -->
   <allow>
     <create creator="new" javascript="FeedbackUpdater">
-    	<param name="class" value="br.inf.pucrio.codesearcher.dwr.FeedbackUpdater"/>
+    	<param name="class" value="br.inf.pucrio.codesearcher.dwr.DwrFeedbackUpdater"/>
     </create>
   </allow>
 </dwr>
