@@ -1,0 +1,13 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://directwebremoting.org/schema/dwr30.dtd">
+
+<dwr>
+
+  <!-- without allow, DWR isn't allowed to do anything -->
+  <allow>
+    <create creator="new" javascript="FeedbackUpdater">
+    	<param name="class" value="br.inf.pucrio.codesearcher.dwr.FeedbackUpdater"/>
+    </create>
+  </allow>
+</dwr>

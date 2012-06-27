@@ -1,6 +1,5 @@
 package br.inf.pucrio.codesearcher;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
@@ -10,16 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.lucene.analysis.WhitespaceAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.Field.Index;
 import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.Term;
-import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.util.Version;
+
+import br.inf.pucrio.codesearcher.util.IndexUtil;
 
 public class Updater extends AbstractIndexAccessServlet
 {
@@ -32,8 +29,7 @@ public class Updater extends AbstractIndexAccessServlet
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		IndexWriter writer = new IndexWriter( FSDirectory.open( new File( path ) ), new IndexWriterConfig(
-				Version.LUCENE_33, new WhitespaceAnalyzer( Version.LUCENE_33 ) ) );
+		IndexWriter writer = IndexUtil.openIndexWriter();
 
 		final String[] docIdArray = request.getParameterValues( "docId" );
 		final String[] feedbackArray = request.getParameterValues( "feedback" );
@@ -85,11 +81,4 @@ public class Updater extends AbstractIndexAccessServlet
 		RequestDispatcher dispatcher = request.getRequestDispatcher( "index.jsp" );
 		dispatcher.forward( request, response );
 	}
-
-	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		doPost( request, response );
-	}
-
 }

@@ -4,10 +4,14 @@ body
 	font-family: arial,sans-serif;
 }
 
-a:link, a:visited
+div#logDiv a:link, a:visited
 {
 	text-decoration: none;	
 }
+
+div.search-header input[type=text] { 
+	width: 500px; 
+} 
 
 div#result-content, div#search-content, div#error-content
 {
@@ -24,14 +28,15 @@ div#result-search-form
 div#help-content
 {
 	position: absolute;
-	width: 10%;
-	left: 90%;
+	width: 200px;
+	right: 10px;
 	top: 10px;
 }
 
 span.logo
 {
 	font-size: 50px;
+	text-decoration: none;	
 }
 
 span.result
@@ -66,16 +71,21 @@ span.method-name
 	color:purple;
 }
 
-div.snippet
+div.snippet, div.snippet-detailed
 {
 	border: 2px solid lightSteelBlue;
 	margin-top: 2px;
 	margin-bottom: 2px;
 	width:100%; 
-	height:170px; 
 	background-color:#F2F2F2; 
 	overflow:auto;
 }
+
+div.snippet
+{
+	height: 170px;
+}
+
 
 div.result-content
 {

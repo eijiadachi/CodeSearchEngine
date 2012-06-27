@@ -12,17 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.lucene.analysis.WhitespaceAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.MultiTermQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.util.Version;
+
+import br.inf.pucrio.codesearcher.util.IndexUtil;
 
 public class Searcher extends AbstractIndexAccessServlet
 {
@@ -37,15 +35,11 @@ public class Searcher extends AbstractIndexAccessServlet
 	{
 		String queryStr = request.getParameter( "query" );
 
-		final IndexReader reader = openIndexReader();
+		final IndexReader reader = IndexUtil.openIndexReader();
 
 		final IndexSearcher searcher = new IndexSearcher( reader );
 
-		QueryParser parser = new QueryParser( Version.LUCENE_33, "uses", new WhitespaceAnalyzer( Version.LUCENE_33 ) );
-
-		parser.setAllowLeadingWildcard( true );
-		parser.setLowercaseExpandedTerms( false );
-		parser.setMultiTermRewriteMethod( MultiTermQuery.SCORING_BOOLEAN_QUERY_REWRITE );
+		QueryParser parser = IndexUtil.buildQueryParser();
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher( "show_results.jsp" );
 
@@ -84,8 +78,8 @@ public class Searcher extends AbstractIndexAccessServlet
 		}
 		catch (Exception e)
 		{
-			request.setAttribute("exception", e);
-			
+			request.setAttribute( "exception", e );
+
 			dispatcher = request.getRequestDispatcher( "error.jsp" );
 		}
 		finally
@@ -93,11 +87,4 @@ public class Searcher extends AbstractIndexAccessServlet
 			dispatcher.forward( request, response );
 		}
 	}
-
-	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		doPost( request, response );
-	}
-
 }

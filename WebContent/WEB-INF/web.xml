@@ -773,7 +773,7 @@ Tools are not allowed to add the non-standard information into the
 standard deployment descriptor.
 -->
 <web-app xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <javaee:display-name>Ola Mundo em Servlet!</javaee:display-name>
+  <javaee:display-name>Code Search Engine</javaee:display-name>
   <javaee:description></javaee:description>
   
   <servlet>
@@ -784,6 +784,20 @@ standard deployment descriptor.
     <servlet-name>CodeUpdater</servlet-name>
     <servlet-class>br.inf.pucrio.codesearcher.Updater</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>DetailedView</servlet-name>
+    <servlet-class>br.inf.pucrio.codesearcher.Viewer</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>dwr-invoker</servlet-name>
+  	<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+  	<init-param>
+		<param-name>config</param-name>
+		<param-value>/WEB-INF/dwr.xml</param-value>  	
+  	</init-param>
+</servlet>
+
   <servlet-mapping>
     <servlet-name>CodeSearcher</servlet-name>
     <url-pattern>*.search</url-pattern>
@@ -792,4 +806,12 @@ standard deployment descriptor.
     <servlet-name>CodeUpdater</servlet-name>
     <url-pattern>*.update</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DetailedView</servlet-name>
+    <url-pattern>*.detail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>dwr-invoker</servlet-name>
+  	<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -7,7 +7,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+
+<script type="text/javascript" src="dwr/engine.js"></script>
+<script type="text/javascript" src="dwr/util.js"></script>
+
+<script type="text/javascript" src="dwr/interface/FeedbackUpdater.js"></script>
+
 <script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="js/update_feedback.js"></script>
+
 <link href="css/prettify.css" rel="stylesheet" type="text/css" />
 <link href="css/codeSearcher.css" rel="stylesheet" type="text/css" />
 
@@ -20,7 +29,6 @@
 %>
 
 <title><%= titleMsg %></title>
-
 </head>
 
 
@@ -30,10 +38,13 @@
 
 <div id="help-content">
 	<span style="text-align: right;"><a href="index.jsp">Home</a></span>
+	|
+	<span style="text-align: right;"><a href="config.jsp">Config</a></span>
+	|
 	<span style="text-align: right;"><a href="help.jsp">Help</a></span>
 </div>
 
-<div style="margin-top: 40px; height:70px;">
+<div id="logoDiv" style="margin-top: 40px; height:70px;">
 	
 	<div style="width:220px; float:left;">
 	
@@ -52,7 +63,7 @@
 	</center>
 	</div>
 	
-	<div style="margin-left:250px;">
+	<div class="search-header" style="margin-left:250px;">
 		<form method="get" action="Searcher.search">
 			<input type="text" name="query" size="150" style="background-color: white;"></input>
 			<input type="submit" value="Search" />
@@ -117,12 +128,12 @@
 			final String feedback = document.get( "feedback" );
 			final Feedback documentCurrentFeedback = Feedback.valueOf( feedback );
 	%>
-	<form action="Updater.update">		
+	<form id="show-results-form" action="Updater.update">		
 		<input name="docId" type="hidden" value="<%= docId %>" />
 		
 		<div class="result-content">
 			<span class="result-header">Document # <%= docId %></span>
-			<select name="feedback">
+			<select docId="<%= docId %>" name="feedback">
 			<%
 			for(Feedback feedbackOption : feedbackOptions) 
 			{
@@ -146,7 +157,7 @@
 			
 			<br>
 			
-			<span class="method-name"> <%= methodName %></span>
+			<span class="method-name"> <a href="<%= String.format("Viewer.detail?docId=%s", docId) %>"><%= methodName %></a></span>
 			
 			<div class="snippet">
 			<pre class="prettyprint" id="java"><%= codeSnippet %></pre>
