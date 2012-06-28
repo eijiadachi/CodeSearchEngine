@@ -776,6 +776,12 @@ standard deployment descriptor.
   <javaee:display-name>Code Search Engine</javaee:display-name>
   <javaee:description></javaee:description>
   
+	<context-param>
+		<description></description>
+		<param-name>indexPath</param-name>
+		<param-value>C:\Users\Eiji\git\CodeSearchEngine\index</param-value>
+	</context-param>
+  
   <servlet>
     <servlet-name>CodeSearcher</servlet-name>
     <servlet-class>br.inf.pucrio.codesearcher.Searcher</servlet-class>

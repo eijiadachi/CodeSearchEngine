@@ -21,9 +21,7 @@ public final class IndexUtil
 		super();
 	}
 
-	protected static final String path = "/Users/eijiadachi/git/CodeSearchEngine/index";
-
-	public static IndexReader openIndexReader()
+	public static IndexReader openIndexReader(final String path)
 	{
 		try
 		{
@@ -45,7 +43,7 @@ public final class IndexUtil
 
 	public static final Version LUCENE_VERSION = Version.LUCENE_33;
 
-	public static IndexWriter openIndexWriter()
+	public static IndexWriter openIndexWriter(final String path)
 	{
 		try
 		{

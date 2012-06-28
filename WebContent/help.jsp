@@ -13,6 +13,9 @@
 
 <div id="help-content">
 	<span style="text-align: right;"><a href="index.jsp">Home</a></span>
+	|
+	<span style="text-align: right;"><a href="Configurator.config">Config</a></span>
+	|
 	<span style="text-align: right;"><a href="help.jsp">Help</a></span>
 </div>
 

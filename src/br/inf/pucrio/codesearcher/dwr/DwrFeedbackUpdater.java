@@ -3,6 +3,7 @@ package br.inf.pucrio.codesearcher.dwr;
 import java.io.IOException;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.apache.lucene.document.Document;
@@ -28,12 +29,30 @@ public class DwrFeedbackUpdater
 		return session;
 	}
 
-	public boolean updateFeedback(final String docId, final String newFeedback)
+	private String getIndexPath()
+	{
+		WebContext context = WebContextFactory.get();
+
+		ServletContext servletContext = context.getServletContext();
+
+		String indexPath = servletContext.getInitParameter( "indexPath" );
+
+		return indexPath;
+	}
+
+	private Map<String, Document> getDocumentsMapFromSession()
 	{
 		HttpSession session = getSession();
 
 		@SuppressWarnings("unchecked")
 		Map<String, Document> map = (Map<String, Document>) session.getAttribute( "documentsMap" );
+
+		return map;
+	}
+
+	public boolean updateFeedback(final String docId, final String newFeedback)
+	{
+		Map<String, Document> map = getDocumentsMapFromSession();
 
 		Document document = map.get( docId );
 
@@ -52,7 +71,9 @@ public class DwrFeedbackUpdater
 
 		Term term = new Term( "docId", docId );
 
-		IndexWriter writer = IndexUtil.openIndexWriter();
+		String indexPath = getIndexPath();
+
+		IndexWriter writer = IndexUtil.openIndexWriter( indexPath );
 		try
 		{
 			writer.updateDocument( term, document );

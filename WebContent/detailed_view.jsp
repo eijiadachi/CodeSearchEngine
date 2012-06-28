@@ -19,15 +19,16 @@
 </head>
 <body onload="prettyPrint()">
 
+
 <div id="help-content">
 	<span style="text-align: right;"><a href="index.jsp">Home</a></span>
 	|
-	<span style="text-align: right;"><a href="config.jsp">Config</a></span>
+	<span style="text-align: right;"><a href="Configurator.config">Config</a></span>
 	|
 	<span style="text-align: right;"><a href="help.jsp">Help</a></span>
 </div>
 
-<div style="margin-top: 40px; height:70px;">
+<div class="logoDiv" style="margin-top: 40px; height:70px;">
 	
 	<div class="logoDiv" style="width:220px; float:left;">
 	

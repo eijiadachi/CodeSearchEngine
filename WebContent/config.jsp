@@ -28,7 +28,7 @@
 	<span style="text-align: right;"><a href="help.jsp">Help</a></span>
 </div>
 
-<div style="margin-top: 40px; height:70px;">
+<div class="logoDiv" style="margin-top: 40px; height:70px;">
 	
 	<div style="width:220px; float:left;">
 	

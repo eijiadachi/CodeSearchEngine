@@ -16,7 +16,8 @@ public class Configurator extends AbstractCodeSearcherServlet
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	public void performAction(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+			IOException
 	{
 		Feedback[] feedbackArray = Feedback.values();
 		for (Feedback feedback : feedbackArray)

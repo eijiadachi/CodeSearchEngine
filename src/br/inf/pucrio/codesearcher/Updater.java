@@ -16,8 +16,6 @@ import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.Term;
 
-import br.inf.pucrio.codesearcher.util.IndexUtil;
-
 public class Updater extends AbstractCodeSearcherServlet
 {
 
@@ -27,9 +25,10 @@ public class Updater extends AbstractCodeSearcherServlet
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	public void performAction(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+			IOException
 	{
-		IndexWriter writer = IndexUtil.openIndexWriter();
+		IndexWriter writer = openIndexWriter();
 
 		final String[] docIdArray = request.getParameterValues( "docId" );
 		final String[] feedbackArray = request.getParameterValues( "feedback" );
