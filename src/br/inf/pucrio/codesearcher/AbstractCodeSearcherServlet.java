@@ -70,6 +70,8 @@ public abstract class AbstractCodeSearcherServlet extends HttpServlet
 		}
 		catch (final Throwable e)
 		{
+			e.printStackTrace();
+
 			request.setAttribute( "exception", e );
 
 			RequestDispatcher dispatcher = request.getRequestDispatcher( "error.jsp" );

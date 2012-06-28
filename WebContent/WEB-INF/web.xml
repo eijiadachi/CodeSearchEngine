@@ -779,7 +779,7 @@ standard deployment descriptor.
 	<context-param>
 		<description></description>
 		<param-name>indexPath</param-name>
-		<param-value>C:\Users\Eiji\git\CodeSearchEngine\index</param-value>
+		<param-value>\Users\Eiji\git\CodeSearchEngine\index</param-value>
 	</context-param>
   
   <servlet>
