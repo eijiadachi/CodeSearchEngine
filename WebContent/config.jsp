@@ -18,15 +18,12 @@
 
 </head>
 
-
-
-
 <body>
 
 <div id="help-content">
 	<span style="text-align: right;"><a href="index.jsp">Home</a></span>
 	|
-	<span style="text-align: right;"><a href="config.jsp">Config</a></span>
+	<span style="text-align: right;"><a href="Configurator.config">Config</a></span>
 	|
 	<span style="text-align: right;"><a href="help.jsp">Help</a></span>
 </div>
@@ -63,21 +60,40 @@
 
 <div style="width: 220px; float:left; font-family: arial,sans-serif;">
 
-<p><a href="Searcher.search?query=feedback:FIVE">Rating 5 documents.</a></p>
+<%
+	final Feedback[] feedbackOptions = Feedback.values();
 
-<p><a href="Searcher.search?query=feedback:FOUR">Rating 4 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:THREE">Rating 3 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:TWO">Rating 2 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:ONE">Rating 1 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:NONE">Non rated documents.</a></p>
+	for( Feedback feedback : feedbackOptions )
+	{
+		final String feedbackString = feedback.getName();
+		final String feedbackName = feedback.name();
+%>
+<p><a href="Searcher.search?query=feedback:<%=feedbackName%>"><%= feedbackString %> documents.</a></p>	
+<%
+	}
+%>
 
 </div>
 
 <div style="margin-top: 10px; margin-left: 250px; width: 80%;">
+	
+	<form method="post" action="Configurator.config">
+		<%
+			for( Feedback feedback : feedbackOptions )
+			{
+				final String feedbackString = feedback.getName();
+				final String feedbackName = feedback.name();
+				final Float boost = feedback.getBoostValue();
+		%>
+		<span class="input-config">
+			<%= feedbackString %>: 
+		</span>
+			 <input type="text" name="<%=feedbackName%>" value="<%= boost %>"/> <br>	
+		<%
+			}
+		%>
+		<input type="submit" value="Update">
+	</form>
 	
 </div>
 

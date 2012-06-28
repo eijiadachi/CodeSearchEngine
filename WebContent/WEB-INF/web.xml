@@ -788,6 +788,10 @@ standard deployment descriptor.
     <servlet-name>DetailedView</servlet-name>
     <servlet-class>br.inf.pucrio.codesearcher.Viewer</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Configurator</servlet-name>
+    <servlet-class>br.inf.pucrio.codesearcher.Configurator</servlet-class>
+  </servlet>
   
   <servlet>
   	<servlet-name>dwr-invoker</servlet-name>
@@ -809,6 +813,10 @@ standard deployment descriptor.
   <servlet-mapping>
     <servlet-name>DetailedView</servlet-name>
     <url-pattern>*.detail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Configurator</servlet-name>
+    <url-pattern>*.config</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>dwr-invoker</servlet-name>

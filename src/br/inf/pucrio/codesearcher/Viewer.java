@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.lucene.document.Document;
 
-public class Viewer extends AbstractIndexAccessServlet
+public class Viewer extends AbstractCodeSearcherServlet
 {
 	/**
 	 * 

@@ -85,7 +85,7 @@
 		final String feedbackString = feedback.getName();
 		final String feedbackName = feedback.name();
 %>
-<p><a href="Searcher.search?query=feedback:<%=feedbackName%>"><%= feedbackString %> documents.</a></p>	
+<p><a href="Searcher.search?query=feedback:<%=feedbackName%>" ><%= feedbackString %> documents.</a></p>	
 <%
 	}
 %>
@@ -158,7 +158,7 @@
 			
 			<br>
 			
-			<span class="method-name"> <a href="<%= String.format("Viewer.detail?docId=%s", docId) %>"><%= methodName %></a></span>
+			<span class="method-name"> <a title="Click here to see this method in more detail." href="<%= String.format("Viewer.detail?docId=%s", docId) %>"><%= methodName %></a></span>
 			
 			<div class="snippet">
 			<pre class="prettyprint" id="java"><%= codeSnippet %></pre>

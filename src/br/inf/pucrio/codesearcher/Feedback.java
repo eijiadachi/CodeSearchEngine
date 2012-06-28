@@ -2,9 +2,16 @@ package br.inf.pucrio.codesearcher;
 
 public enum Feedback
 {
-
 	NONE
 	{
+		private float boostValue = 1.0f;
+
+		@Override
+		public Float getBoostValue()
+		{
+			return boostValue;
+		}
+
 		@Override
 		public String getComboString()
 		{
@@ -18,13 +25,22 @@ public enum Feedback
 		}
 
 		@Override
-		public Float getBoostValue()
+		public void setBoostValue(Float boostValue)
 		{
-			return 1.0f;
+			this.boostValue = boostValue;
 		}
+
 	},
 	FIVE
 	{
+		private float boostValue = 50.0f;
+
+		@Override
+		public Float getBoostValue()
+		{
+			return boostValue;
+		}
+
 		@Override
 		public String getComboString()
 		{
@@ -32,13 +48,21 @@ public enum Feedback
 		}
 
 		@Override
-		public Float getBoostValue()
+		public void setBoostValue(Float boostValue)
 		{
-			return 50f;
+			this.boostValue = boostValue;
 		}
 	},
 	FOUR
 	{
+		private float boostValue = 40.0f;
+
+		@Override
+		public Float getBoostValue()
+		{
+			return boostValue;
+		}
+
 		@Override
 		public String getComboString()
 		{
@@ -46,13 +70,22 @@ public enum Feedback
 		}
 
 		@Override
-		public Float getBoostValue()
+		public void setBoostValue(Float boostValue)
 		{
-			return 40f;
+			this.boostValue = boostValue;
 		}
 	},
+
 	THREE
 	{
+		private float boostValue = 30.0f;
+
+		@Override
+		public Float getBoostValue()
+		{
+			return boostValue;
+		}
+
 		@Override
 		public String getComboString()
 		{
@@ -60,13 +93,21 @@ public enum Feedback
 		}
 
 		@Override
-		public Float getBoostValue()
+		public void setBoostValue(Float boostValue)
 		{
-			return 30f;
+			this.boostValue = boostValue;
 		}
 	},
 	TWO
 	{
+		private float boostValue = 0.001f;
+
+		@Override
+		public Float getBoostValue()
+		{
+			return boostValue;
+		}
+
 		@Override
 		public String getComboString()
 		{
@@ -74,13 +115,21 @@ public enum Feedback
 		}
 
 		@Override
-		public Float getBoostValue()
+		public void setBoostValue(Float boostValue)
 		{
-			return 0.001f;
+			this.boostValue = boostValue;
 		}
 	},
 	ONE
 	{
+		private float boostValue = 0.00001f;
+
+		@Override
+		public Float getBoostValue()
+		{
+			return boostValue;
+		}
+
 		@Override
 		public String getComboString()
 		{
@@ -88,12 +137,14 @@ public enum Feedback
 		}
 
 		@Override
-		public Float getBoostValue()
+		public void setBoostValue(Float boostValue)
 		{
-			return 0.000001f;
+			this.boostValue = boostValue;
 		}
 	},
 	;
+
+	public abstract Float getBoostValue();
 
 	public abstract String getComboString();
 
@@ -102,5 +153,5 @@ public enum Feedback
 		return getComboString();
 	}
 
-	public abstract Float getBoostValue();
+	public abstract void setBoostValue(final Float boostValue);
 }

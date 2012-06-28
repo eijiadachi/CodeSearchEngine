@@ -22,7 +22,7 @@ import org.apache.lucene.search.TopDocs;
 
 import br.inf.pucrio.codesearcher.util.IndexUtil;
 
-public class Searcher extends AbstractIndexAccessServlet
+public class Searcher extends AbstractCodeSearcherServlet
 {
 
 	/**

@@ -18,7 +18,7 @@ import org.apache.lucene.index.Term;
 
 import br.inf.pucrio.codesearcher.util.IndexUtil;
 
-public class Updater extends AbstractIndexAccessServlet
+public class Updater extends AbstractCodeSearcherServlet
 {
 
 	/**

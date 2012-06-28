@@ -83,7 +83,15 @@ span.method-name
 	font-size: 18px;
 	font-family: Lucida Sans, Tahoma, Arial, Sans-Serif;
 	font-weight: bold;	
-	color:purple;
+	color: green;
+}
+span.input-config
+{
+	float: left; 
+	width: 130px; 
+	text-align: right;
+	right-margin: 50px;
+	border: 2px solid;
 }
 
 div.snippet, div.snippet-detailed
@@ -100,7 +108,6 @@ div.snippet
 {
 	height: 170px;
 }
-
 
 div.result-content
 {
