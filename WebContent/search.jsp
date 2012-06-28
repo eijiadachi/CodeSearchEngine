@@ -22,7 +22,7 @@
 	<div id="search-content">
 	
 		<center>
-			<div>
+			<div class="logoDiv">
 				<span class="logo" title="Coode - A Code Search Engine">
 					<a href="index.jsp">
 					<span style="color: blue;">C</span>
