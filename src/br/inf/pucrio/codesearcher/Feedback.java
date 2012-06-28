@@ -14,7 +14,7 @@ public enum Feedback
 		@Override
 		public String getName()
 		{
-			return "Not rated";
+			return "Not Rated";
 		}
 
 		@Override
