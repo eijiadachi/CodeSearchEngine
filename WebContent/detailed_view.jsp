@@ -29,21 +29,21 @@
 
 <div style="margin-top: 40px; height:70px;">
 	
-	<div style="width:220px; float:left;">
+	<div class="logoDiv" style="width:220px; float:left;">
 	
-	<span class="logo" title="Coode - A Code Search Engine">
-		<a href="index.jsp">
-		<span style="color: blue;">C</span>
-		<span style="color: red;">o</span>
-		<span style="color: #FFCC00;">o</span>
-		<span style="color: green;">d</span>
-		<span style="color: blue;">e</span>
-		</a>
-	</span>
-	
-	<center>
-	<span style="color: #DD4B39; font: 20px 'Arial';">Search</span>
-	</center>
+		<span class="logo" title="Coode - A Code Search Engine">
+			<a href="index.jsp">
+			<span style="color: blue;">C</span>
+			<span style="color: red;">o</span>
+			<span style="color: #FFCC00;">o</span>
+			<span style="color: green;">d</span>
+			<span style="color: blue;">e</span>
+			</a>
+		</span>
+		
+		<center>
+			<span style="color: #DD4B39; font: 20px 'Arial';">Search</span>
+		</center>
 	</div>
 	
 	<div class="search-header" style="margin-left:250px;">

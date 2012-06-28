@@ -21,7 +21,7 @@ public final class IndexUtil
 		super();
 	}
 
-	protected static final String path = "/Users/Eiji/git/CodeSearchEngine/index";
+	protected static final String path = "/Users/eijiadachi/git/CodeSearchEngine/index";
 
 	public static IndexReader openIndexReader()
 	{

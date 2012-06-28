@@ -1,8 +1,24 @@
 
 var init = function()
 {
-	var $feedbackCombo = $("select[name='feedback'");
+	var selectQueryStr = "select.feedback_select";
+	var $feedbackCombo = $( selectQueryStr );
 	$feedbackCombo.change( comboBoxHandler );
+};
+
+var waitDivQuery = "div.wait-div";
+
+var hideWaitDiv = function()
+{
+	var $waitDiv = $( waitDivQuery );
+	$waitDiv.hide();
+};
+
+var showWaitDiv = function()
+{
+	
+	var $waitDiv = $( waitDivQuery );
+	$waitDiv.show();
 };
 
 var comboBoxHandler = function()
@@ -11,12 +27,21 @@ var comboBoxHandler = function()
 	var $docId = $this.attr( "docId" );
 	var $feedbackValue = $this.val();
 	
+	showWaitDiv();
 	FeedbackUpdater.updateFeedback( $docId, $feedbackValue, dwrCallback );
 };
 
 var dwrCallback = function( returnedValue )
 {
-	alert(returnedValue);
+	if( returnedValue === true )
+	{
+		alert("Feedback atualizado com sucesso.");
+	}
+	else
+	{
+		alert("Feedback n‹o p™de ser atualizado.");
+	}
+	hideWaitDiv();
 };
 
 // wait for the DOM to be loaded 

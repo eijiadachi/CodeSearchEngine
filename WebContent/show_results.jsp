@@ -36,6 +36,8 @@
 
 <body onload="prettyPrint()">
 
+<div class="wait-div"></div>
+
 <div id="help-content">
 	<span style="text-align: right;"><a href="index.jsp">Home</a></span>
 	|
@@ -44,7 +46,7 @@
 	<span style="text-align: right;"><a href="help.jsp">Help</a></span>
 </div>
 
-<div id="logoDiv" style="margin-top: 40px; height:70px;">
+<div class="logoDiv" style="margin-top: 40px; height:70px;">
 	
 	<div style="width:220px; float:left;">
 	
@@ -75,18 +77,18 @@
 <div style="margin-top: 20px;">
 
 <div style="width: 220px; float:left; font-family: arial,sans-serif;">
+<%
+	final Feedback[] feedbackOptions = Feedback.values();
 
-<p><a href="Searcher.search?query=feedback:FIVE">Rating 5 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:FOUR">Rating 4 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:THREE">Rating 3 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:TWO">Rating 2 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:ONE">Rating 1 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:NONE">Non rated documents.</a></p>
+	for( Feedback feedback : feedbackOptions )
+	{
+		final String feedbackString = feedback.getName();
+		final String feedbackName = feedback.name();
+%>
+<p><a href="Searcher.search?query=feedback:<%=feedbackName%>"><%= feedbackString %> documents.</a></p>	
+<%
+	}
+%>
 
 </div>
 
@@ -119,7 +121,6 @@
 	%>
 		<span class="result"> Resultados para:</span> <span class="query"><%= query %></span>
 	<%
-		final Feedback[] feedbackOptions = Feedback.values();
 		for( final Document document : documents )
 		{
 			final String methodName = document.get( "methodName");
@@ -133,7 +134,7 @@
 		
 		<div class="result-content">
 			<span class="result-header">Document # <%= docId %></span>
-			<select docId="<%= docId %>" name="feedback">
+			<select docId="<%= docId %>" class="feedback_select">
 			<%
 			for(Feedback feedbackOption : feedbackOptions) 
 			{
@@ -165,12 +166,7 @@
 			
 		</div>
 		<% 
-	}// for
-%>
-
-	<input type="submit" value="Send feedback"/>
-	
-	<%
+		}// for
 	}// else 
 	%>
 

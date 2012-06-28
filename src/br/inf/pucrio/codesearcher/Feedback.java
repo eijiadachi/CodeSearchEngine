@@ -12,52 +12,29 @@ public enum Feedback
 		}
 
 		@Override
+		public String getName()
+		{
+			return "Not Rated";
+		}
+
+		@Override
 		public Float getBoostValue()
 		{
 			return 1.0f;
 		}
 	},
-	ONE
+	FIVE
 	{
 		@Override
 		public String getComboString()
 		{
-			return "1";
+			return "Very Relevant";
 		}
 
 		@Override
 		public Float getBoostValue()
 		{
-			return 10f;
-		}
-	},
-	TWO
-	{
-		@Override
-		public String getComboString()
-		{
-			return "2";
-		}
-
-		@Override
-		public Float getBoostValue()
-		{
-			return 20f;
-		}
-	},
-	THREE
-	{
-		@Override
-		public String getComboString()
-		{
-			return "3";
-		}
-
-		@Override
-		public Float getBoostValue()
-		{
-
-			return 30f;
+			return 50f;
 		}
 	},
 	FOUR
@@ -65,7 +42,7 @@ public enum Feedback
 		@Override
 		public String getComboString()
 		{
-			return "4";
+			return "Relevant";
 		}
 
 		@Override
@@ -74,22 +51,56 @@ public enum Feedback
 			return 40f;
 		}
 	},
-	FIVE
+	THREE
 	{
 		@Override
 		public String getComboString()
 		{
-			return "5";
+			return "Indifferent";
 		}
 
 		@Override
 		public Float getBoostValue()
 		{
-			return 50f;
+			return 30f;
 		}
-	};
+	},
+	TWO
+	{
+		@Override
+		public String getComboString()
+		{
+			return "Irrelevant";
+		}
+
+		@Override
+		public Float getBoostValue()
+		{
+			return 0.001f;
+		}
+	},
+	ONE
+	{
+		@Override
+		public String getComboString()
+		{
+			return "Very Irrelevant";
+		}
+
+		@Override
+		public Float getBoostValue()
+		{
+			return 0.000001f;
+		}
+	},
+	;
 
 	public abstract String getComboString();
+
+	public String getName()
+	{
+		return getComboString();
+	}
 
 	public abstract Float getBoostValue();
 }
