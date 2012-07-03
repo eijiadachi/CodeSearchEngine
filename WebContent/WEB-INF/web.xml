@@ -773,12 +773,12 @@ Tools are not allowed to add the non-standard information into the
 standard deployment descriptor.
 -->
 <web-app xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <javaee:display-name>Code Search Engine</javaee:display-name>
-  <javaee:description></javaee:description>
+  <display-name>Coode Search Engine</display-name>
+  <description></description>
   <context-param>
-    <javaee:description></javaee:description>
-    <javaee:param-name>indexPath</javaee:param-name>
-    <javaee:param-value>\Users\Eiji\git\CodeSearchEngine\index</javaee:param-value>
+    <description></description>
+    <param-name>indexPath</param-name>
+    <param-value>\Users\Eiji\git\CodeSearchEngine\index</param-value>
   </context-param>
   <servlet>
     <servlet-name>CodeSearcher</servlet-name>
@@ -800,8 +800,8 @@ standard deployment descriptor.
     <servlet-name>dwr-invoker</servlet-name>
     <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
     <init-param>
-      <javaee:param-name>config</javaee:param-name>
-      <javaee:param-value>/WEB-INF/dwr.xml</javaee:param-value>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/dwr.xml</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
