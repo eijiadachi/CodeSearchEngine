@@ -110,7 +110,6 @@
 			<li>Try more generic keywords.</li>
 			<li>Try using less keywords.</li>			
 		</ul>
-		</p>
 		<p>
 		Please go to the <span style="text-align: right;"><a href="help.jsp">Help</a></span> section if you still have any doubt about the queries syntax.
 		</p>
