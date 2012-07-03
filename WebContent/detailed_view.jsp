@@ -131,7 +131,6 @@
 			</div>
 			
 		</div>
-	<input type="submit" value="Send feedback"/>
 
 </form>
 		
