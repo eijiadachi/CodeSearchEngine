@@ -77,6 +77,8 @@
 
 <div style="margin-top: 10px; margin-left: 250px; width: 80%;">
 	
+	<span class="result"> Configurações de peso para os níveis de feedback:</span> <br>
+	
 	<form method="post" action="Configurator.config">
 		<%
 			for( Feedback feedback : feedbackOptions )

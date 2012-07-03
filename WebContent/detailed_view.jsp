@@ -58,18 +58,18 @@
 <div style="margin-top: 20px;">
 
 <div style="width: 220px; float:left; font-family: arial,sans-serif;">
+<%
+	final Feedback[] feedbackOptions = Feedback.values();
 
-<p><a href="Searcher.search?query=feedback:FIVE">Rating 5 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:FOUR">Rating 4 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:THREE">Rating 3 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:TWO">Rating 2 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:ONE">Rating 1 documents.</a></p>
-
-<p><a href="Searcher.search?query=feedback:NONE">Non rated documents.</a></p>
+	for( Feedback feedback : feedbackOptions )
+	{
+		final String feedbackString = feedback.getName();
+		final String feedbackName = feedback.name();
+%>
+<p><a href="Searcher.search?query=feedback:<%=feedbackName%>" ><%= feedbackString %> documents.</a></p>	
+<%
+	}
+%>
 
 </div>
 
@@ -94,7 +94,6 @@
 			<span class="result-header">Document # <%= docId %></span>
 			<select name="feedback">
 			<%
-			final Feedback[] feedbackOptions = Feedback.values();
 			for(Feedback feedbackOption : feedbackOptions) 
 			{
 				final Object value = feedbackOption.getComboString();
