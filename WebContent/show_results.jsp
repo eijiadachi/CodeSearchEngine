@@ -102,7 +102,7 @@
 		<p>
 		Your query <span class="query">"<%= query %>"</span> did not match any document.
 		</p>
-		<p>
+
 		Suggestions:
 		<ul>
 			<li>Make sure all keywords are spelled correctly.</li>
