@@ -35,11 +35,11 @@ var dwrCallback = function( returnedValue )
 {
 	if( returnedValue === true )
 	{
-		alert("Feedback atualizado com sucesso.");
+		alert("Feedback updated.");
 	}
 	else
 	{
-		alert("Feedback n‹o p™de ser atualizado.");
+		alert("Feedback not updated.");
 	}
 	hideWaitDiv();
 };

@@ -7,7 +7,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
+<script type="text/javascript" src="js/jquery.js"></script> 
+
+<script type="text/javascript" src="dwr/engine.js"></script>
+<script type="text/javascript" src="dwr/util.js"></script>
+
+<script type="text/javascript" src="dwr/interface/FeedbackUpdater.js"></script>
+
 <script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="js/update_feedback.js"></script>
 <link href="css/prettify.css" rel="stylesheet" type="text/css" />
 <link href="css/codeSearcher.css" rel="stylesheet" type="text/css" />
 
@@ -92,7 +100,7 @@
 
 		<div class="result-content">
 			<span class="result-header">Document # <%= docId %></span>
-			<select name="feedback">
+			<select docId="<%= docId %>" class="feedback_select">
 			<%
 			for(Feedback feedbackOption : feedbackOptions) 
 			{
